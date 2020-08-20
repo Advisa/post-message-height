@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe</title>
+</head>
+<body>
+  <template id="removeButton">
+    <button onclick="(function(event) { event.target.remove(); return false;})(event);return false;">Remove element</button>
+  </template>
+  <button onclick="(function(event) { event.target.style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);return false;})(event);return false;">Change my style</button>
+  <button onclick="(function(event) { event.target.style.height = (Math.round(Math.random() * 100) + 16)+'px';return false;})(event);return false;">Change my height</button>
+  <button onclick="(function(event) { event.target.classList.add('foo-'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6));return false;})(event);return false;">Change my class</button>
+  <button onclick="(function(event) { event.target.after(removeButton.content.cloneNode(true)); return false;})(event);return false;">Add element</button>
+  <script type="text/javascript" src="./scroll-height-observer.js"></script>
+</body>
+</html>
